@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android"
-id="org.apache.cordova.paypal"
+id="com.paypal.android.sdk.phonegap"
     version="0.0.1">
     <name>PayPalMobile</name>
     <description>PaypalPlugin</description>
@@ -41,7 +41,7 @@ id="org.apache.cordova.paypal"
 						android:configChanges="keyboardHidden|orientation" />
 					<activity android:name="io.card.payment.DataEntryActivity" />
 		</config-file>	
-        <source-file src="src/android/PayPalMobilePGPlugin.java" target-dir="src/org/paypal" />
+        <source-file src="src/android/PayPalMobilePGPlugin.java" target-dir="src/com.paypal.android.sdk.phonegap" />
         <source-file src="src/android/PayPalAndroidSDK.jar" target-dir="libs" />
         <source-file src="src/android/armeabi/libcardioDecider.so" target-dir="libs/armeabi" />
 		<source-file src="src/android/armeabi-v7a/libcardioDecider.so" target-dir="libs/armeabi-v7a" />
