@@ -42,7 +42,8 @@ id="org.apache.cordova.paypal"
         <source-file src="src/ios/libPayPalMobile.a" framework="true" />
 
         <!-- system frameworks -->
-        <framework src="libxml2.dylib" weak="true" />
+        <framework src="libc++.dylib" />
+        <framework src="libxml2.dylib" />
         <framework src="AVFoundation.framework" weak="true" />
         <framework src="CFNetWork.framework" weak="true" />
         <framework src="MessageUI.framework" weak="true" />
