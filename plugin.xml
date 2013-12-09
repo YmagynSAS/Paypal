@@ -41,7 +41,7 @@ id="com.paypal.android.sdk.phonegap"
 						android:configChanges="keyboardHidden|orientation" />
 					<activity android:name="io.card.payment.DataEntryActivity" />
 		</config-file>	
-        <source-file src="src/android/PayPalMobilePGPlugin.java" target-dir="src/com.paypal.android.sdk.phonegap" />
+        <source-file src="src/android/PayPalMobilePGPlugin.java" target-dir="src/com/paypal/android/sdk/phonegap" />
         <source-file src="src/android/PayPalAndroidSDK.jar" target-dir="libs" />
         <source-file src="src/android/armeabi/libcardioDecider.so" target-dir="libs/armeabi" />
 		<source-file src="src/android/armeabi-v7a/libcardioDecider.so" target-dir="libs/armeabi-v7a" />
