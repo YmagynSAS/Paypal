@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+id="org.apache.cordova.paypal"
+    version="0.0.1">
+    <name>PayPalMobile</name>
+    <description>PaypalPlugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,paypal</keywords>
+    
+    <js-module src="www/PayPalMobilePGPlugin.js" name="PayPalMobile">
+        <clobbers target="PayPalMobile" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+			<feature name="PayPalMobile">
+				<param name="android-package" value="com.paypal.android.sdk.phonegap.PayPalMobilePGPlugin" />
+			</feature>
+        </config-file>
+
+        <source-file src="src/android/PayPalMobilePGPlugin.java" target-dir="src/org/paypal" />
+        <lib-file src="src/android/PayPalAndroidSDK.jar" arch="device" />
+        <lib-file src="src/android/armeabi/libcardioDecider.so" arch="device" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="PayPalMobile">
+				<param name="ios-package" value="PayPalMobilePGPlugin" />
+			</feature>
+        </config-file>
+
+        <header-file src="src/ios/PayPalMobile.h" />
+        <header-file src="src/ios/PayPalPayment.h" />
+        <header-file src="src/ios/PayPalMobilePGPlugin.h" />
+        <header-file src="src/ios/PayPalPaymentViewController.h" />
+        <source-file src="src/ios/PayPalMobilePGPlugin.m" />
+        <source-file src="src/ios/libPayPalMobile.a" framework="true" />
+
+        <!-- system frameworks -->
+        <framework src="libxml2.dylib" weak="true" />
+        <framework src="AVFoundation.framework" weak="true" />
+        <framework src="CFNetWork.framework" weak="true" />
+        <framework src="MessageUI.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+    </platform>
+            
+</plugin>
