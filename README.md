@@ -1,6 +1,11 @@
 Paypal
 ======
 
+PaypalEnvironment:
+  - PayPalEnvironmentNoNetwork
+  - PayPalEnvironmentProduction
+  - PayPalEnvironmentSandbox
+
 Sample code
 -----------
 
