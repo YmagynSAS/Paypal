@@ -20,10 +20,37 @@ id="org.apache.cordova.paypal"
 				<param name="android-package" value="com.paypal.android.sdk.phonegap.PayPalMobilePGPlugin" />
 			</feature>
         </config-file>
-
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.VIBRATE" />
+			<uses-feature android:name="android.hardware.camera" android:required="false" />
+			<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+			<uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+					<service android:name="com.paypal.android.sdk.payments.PayPalService" android:exported="false"/>
+					<activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+					<activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+					<activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+					<activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+					<activity
+						android:name="io.card.payment.CardIOActivity"
+						android:configChanges="keyboardHidden|orientation" />
+					<activity android:name="io.card.payment.DataEntryActivity" />
+		</config-file>	
         <source-file src="src/android/PayPalMobilePGPlugin.java" target-dir="src/org/paypal" />
-        <lib-file src="src/android/PayPalAndroidSDK.jar" arch="device" />
-        <lib-file src="src/android/armeabi/libcardioDecider.so" arch="device" />
+        <source-file src="src/android/PayPalAndroidSDK.jar" target-dir="libs" />
+        <source-file src="src/android/armeabi/libcardioDecider.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/armeabi-v7a/libcardioDecider.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="src/android/armeabi-v7a/libcardioRecognizer.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="src/android/armeabi-v7a/libcardioRecognizer_tegra2.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="src/android/armeabi-v7a/libopencv_core.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="src/android/armeabi-v7a/libopencv_imgproc.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="src/android/mips/libcardioDecider.so" target-dir="libs/mips" />
+		<source-file src="src/android/x86/libcardioDecider.so" target-dir="libs/x86" />
     </platform>
 
     <!-- ios -->
