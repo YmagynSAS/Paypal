@@ -17,7 +17,7 @@ buyButton.onclick = function(e) {
   window.plugins.PayPalMobile.setEnvironment("PayPalEnvironmentNoNetwork");
 
   // create a PayPalPayment object, usually you would pass parameters dynamically
-  var payment = new PayPalPayment("1.99", "USD", "Awesome saws");
+  var payment = new window.plugins.PayPalPayment("1.99", "USD", "Awesome saws");
   
   // define a callback when payment has been completed
   var completionCallback = function(proofOfPayment) {
